@@ -1,0 +1,40 @@
+"0","hrefs <- xml_tables %>% "
+"0","  html_nodes(""a"") %>%"
+"0","  html_attr(""href"")"
+"0","teams <- str_extract_all(hrefs, ""[A-Z][A-Z][A-Z]"")"
+"0","files <- paste0(teams, ""-roster-2017.csv"")"
+"0","basket <- ""https://www.basketball-reference.com"""
+"0","for(i in 2:6){"
+"0","  team <- hrefs[i]"
+"0","  team_url <- paste0(basket, team)"
+"0","  dest <- paste0(teams[i], ""-roster-2017.html"")"
+"0","  download.file(team_url, dest)"
+"0","  roster <- html_table(read_html(team_url))"
+"0","  write.csv(roster, files[i])"
+"0","}"
+"2","trying URL 'https://www.basketball-reference.com/teams/CLE/2017.html'
+"
+"2","downloaded 612 KB
+
+"
+"2","trying URL 'https://www.basketball-reference.com/teams/TOR/2017.html'
+"
+"2","downloaded 578 KB
+
+"
+"2","trying URL 'https://www.basketball-reference.com/teams/WAS/2017.html'
+"
+"2","downloaded 588 KB
+
+"
+"2","trying URL 'https://www.basketball-reference.com/teams/ATL/2017.html'
+"
+"2","downloaded 600 KB
+
+"
+"2","trying URL 'https://www.basketball-reference.com/teams/MIL/2017.html'
+"
+"2","downloaded 590 KB
+
+"
+"0","  "

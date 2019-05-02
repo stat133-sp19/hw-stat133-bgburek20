@@ -1,0 +1,6 @@
+"0","for(i in 2:6){"
+"0","  file <- read.csv(files[i], header = TRUE, stringsAsFactors = FALSE)"
+"0","  file$team <- teams[[i]]"
+"0","  master <- rbind(master, file)"
+"0","}"
+"0","master"

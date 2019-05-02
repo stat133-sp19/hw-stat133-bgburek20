@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556646618203.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3925090309",
+    "id" : "C643BF05",
+    "lastKnownWriteTime" : 1556589990,
+    "last_content_update" : 1556589990,
+    "path" : "~/Desktop/Stat133/binomial/tests/testthat/test_summary_measures.R",
+    "project_path" : "tests/testthat/test_summary_measures.R",
+    "properties" : {
+        "cursorPosition" : "8,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556646415465.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2288510003",
+    "id" : "E983E6C6",
+    "lastKnownWriteTime" : 1556591736,
+    "last_content_update" : 1556591736,
+    "path" : "~/Desktop/Stat133/binomial/R/binomial_functions.R",
+    "project_path" : "R/binomial_functions.R",
+    "properties" : {
+        "cursorPosition" : "147,2",
+        "scrollLine" : "0",
+        "source_window_id" : ""
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

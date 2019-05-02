@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556646646136.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1416537162",
+    "id" : "6789B24",
+    "lastKnownWriteTime" : 1556581172,
+    "last_content_update" : 1556581172,
+    "path" : "~/Desktop/Stat133/binomial/tests/testthat/test_checkers.R",
+    "project_path" : "tests/testthat/test_checkers.R",
+    "properties" : {
+        "cursorPosition" : "23,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

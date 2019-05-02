@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556646839308.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1301612905",
+    "id" : "9B4CA6FA",
+    "lastKnownWriteTime" : 1556647130,
+    "last_content_update" : 1556647130244,
+    "path" : "~/Desktop/Stat133/binomial/vignettes/binomial vignette.Rmd",
+    "project_path" : "vignettes/binomial vignette.Rmd",
+    "properties" : {
+        "cursorPosition" : "12,19",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

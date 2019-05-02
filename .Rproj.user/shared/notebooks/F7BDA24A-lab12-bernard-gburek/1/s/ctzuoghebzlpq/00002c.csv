@@ -1,0 +1,21 @@
+"0","library(stringr)"
+"0","hrefs <- xml_tables %>% "
+"0","  html_nodes(""a"") %>%"
+"0","  html_attr(""href"")"
+"0","teams <- str_extract_all(hrefs, ""[A-Z][A-Z][A-Z]"")"
+"0","files <- paste0(teams, ""-roster-2017.csv"")"
+"0","basket <- ""https://www.basketball-reference.com"""
+"0","bos <- hrefs[1]"
+"0","bos_url <- paste0(basket, bos)"
+"0","dest <- paste0(teams[1], ""-roster-2017.html"")"
+"0","download.file(bos_url, dest)"
+"2","trying URL 'https://www.basketball-reference.com/teams/BOS/2017.html'
+"
+"2","downloaded 557 KB
+
+"
+"0","roster <- html_table(read_html(bos_url))"
+"0","write.csv(roster, files[1])"
+"0","roster"
+"1","[[1]]
+"

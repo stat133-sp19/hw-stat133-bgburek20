@@ -1,0 +1,2 @@
+"0","x = bin_distribution(trials = 5, prob = .69)"
+"0","plot(x)"

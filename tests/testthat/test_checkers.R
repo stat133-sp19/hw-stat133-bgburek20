@@ -1,0 +1,24 @@
+library(testthat)
+context('Test checker methods')
+
+test_that("check_prob() works as expected", {
+  expect_true(check_prob(.5))
+  expect_length(prob, 1)
+  expect_error(check_prob(2), 'p has to be a number between 0 and 1')
+  expect_error(check_prob(-1), 'p has to be a number between 0 and 1')
+})
+
+test_that("check_trials() works as expected", {
+  expect_error(trials(.5), 'invalid trials value')
+  expect_error(trials(-1), 'invalid trials value')
+  expect_true(trials(4))
+
+})
+
+test_that("check_success() works as expected", {
+  expect_true(check_success(0:2, 5))
+  expect_error(check_success(0:6, 5), "success cannot be greater than trials")
+  expect_error(check_success(6, 5), "success cannot be greater than trials")
+  expect_error(check_success(-1, 5), "success value cannot be negative")
+})
+

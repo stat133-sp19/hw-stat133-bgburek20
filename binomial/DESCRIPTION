@@ -1,0 +1,16 @@
+Package: binomial
+Type: Package
+Title: Generates binomial distribution and functions
+Version: 0.1.0
+Author: Bernard Gburek
+Maintainer: Bernard Gburek <bgburek20@berkeley.edu>
+Description: Generates the binomial distribution given the number of trials, probability,
+             and number of successes, visualizations of the binomial distribution, and
+             summary statistics of the binomial distribution.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat,
+          dplyr,
+          stringr
+RoxygenNote: 6.1.1

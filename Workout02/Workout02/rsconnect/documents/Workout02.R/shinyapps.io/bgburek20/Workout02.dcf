@@ -1,0 +1,13 @@
+name: Workout02
+title: Workout02
+username:
+account: bgburek20
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 858944
+bundleId: 2004738
+url: https://bgburek20.shinyapps.io/Workout02/
+when: 1555028226.38754
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R

@@ -12,15 +12,15 @@
 #' # Multiple success values
 #' xb = bin_choose(5, 1:3)
 bin_choose <- function(n, k) {
-  if(any(k > n)){
-    stop("k cannot be greater than n")
-  }
+    if(any(k) > n){
+      stop("k cannot be greater than n")
+    }
   else {
-    num = factorial(n)
-    denom = factorial(k) * factorial(n-k)
-    return(num / denom)
+  num = factorial(n)
+  denom = factorial(k) * factorial(n-k)
+  return(num / denom)
   }
-}
+  }
 
 #'@title bin_probability
 #'@description Calculates likelihood of bin
@@ -66,7 +66,7 @@ bin_distribution <- function(trials, prob){
 #'@export
 plot.bindis <- function(data){
   barplot(data$probability, xlab = 'successes', ylab = 'probability',
-          names.arg = data$success)
+                  names.arg = data$success)
   invisible(data)
 }
 
@@ -91,9 +91,9 @@ bin_cumulative <- function(trials, prob){
 plot.bincum <- function(frame){
   plot <- plot(frame$cumulative, type = "o", xlab = 'successes', ylab = 'probability',
                xaxt = 'n')
-  axis(1, at=1:length(frame$cumulative), labels = frame$success)
-  plot
-  invisible(frame)
+          axis(1, at=1:length(frame$cumulative), labels = frame$success)
+ plot
+ invisible(frame)
 }
 #'@title bin_variable
 #'@description Calculates likelihood of each bin in binomial distribution and cumulative probability
@@ -121,7 +121,7 @@ print.binvar <- function(lst){
       '- prob of success :', prob)
   invisible(lst)
 }
-#'@export
+
 summary.binvar <- function(lst){
   lst$mean = aux_mean(lst$trials, lst$prob)
   lst$variance = aux_variance(lst$trials, lst$prob)
@@ -130,7 +130,7 @@ summary.binvar <- function(lst){
   lst$kurtosis = aux_kurtosis(lst$trials, lst$prob)
   lst
 }
-#'@export
+
 print.summary.binvar <- function(lst){
   cat('"Summary binomial" \n',
       '\n',
@@ -146,35 +146,28 @@ print.summary.binvar <- function(lst){
       '- kurtosis :', aux_kurtosis(lst$trials, lst$prob), '\n')
 }
 
-#'@export
 bin_mean <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_mean(trials, prob))
 }
 
-#'@export
 bin_variance <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_variance(trials, prob))
 }
 
-#'@export
 bin_mode <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_mode(trials, prob))
 }
-
-#'@export
 bin_skewness <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_skewness(trials, prob))
 }
-
-#'@export
 bin_kurtosis <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)

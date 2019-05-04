@@ -12,7 +12,7 @@
 #' # Multiple success values
 #' xb = bin_choose(5, 1:3)
 bin_choose <- function(n, k) {
-  if(any(k > n)){
+  if(any(k) > n){
     stop("k cannot be greater than n")
   }
   else {
@@ -146,35 +146,28 @@ print.summary.binvar <- function(lst){
       '- kurtosis :', aux_kurtosis(lst$trials, lst$prob), '\n')
 }
 
-#'@export
 bin_mean <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_mean(trials, prob))
 }
 
-#'@export
 bin_variance <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_variance(trials, prob))
 }
 
-#'@export
 bin_mode <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_mode(trials, prob))
 }
-
-#'@export
 bin_skewness <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)
   return(aux_skewness(trials, prob))
 }
-
-#'@export
 bin_kurtosis <- function(trials, prob) {
   check_trials(trials)
   check_prob(prob)

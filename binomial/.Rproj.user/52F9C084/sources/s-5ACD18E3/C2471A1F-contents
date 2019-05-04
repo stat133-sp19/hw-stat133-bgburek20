@@ -1,5 +1,4 @@
 library(testthat)
-library(binomial)
 context('Test Summary Measures')
 
 test_that("aux_mean() works as expected", {

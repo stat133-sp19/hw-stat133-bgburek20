@@ -1,5 +1,4 @@
 library(testthat)
-library(binomial)
 context('Test Binomial Package')
 
 test_that("bin_choose() works as expected", {

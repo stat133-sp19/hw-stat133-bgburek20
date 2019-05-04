@@ -1,0 +1,175 @@
+---
+title: "Intro_to_Binomial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Intro_to_Binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(binomial)
+```
+
+## Binomial
+
+The Binomial distribution is one of the most famous probability distributions among discrete random variables. This is the probability model used to calculate probabilities about the number of successes in a fixed number of random trials. The package `"binomial"` provides a means to simulate the binomial distribution in R.
+
+
+## bin_choose()
+
+The function bin_choose() calculates the number of combinations in which k successes can occur in n trials.
+
+For example, the number of combinations in which k = 4 successes can occur in n = 6 trials is:
+
+```{r, warning = FALSE}
+x = bin_choose(n = 6, k = 4)
+x
+```
+
+bin_choose is also able to test mutliple success values at a time. For example, to calculate the number of combinations in which 1,2, and 3 successes (k = 1:3) can occur in n = 6 trials.
+
+```{r}
+x = bin_choose(n = 6, k = 0:3)
+x
+```
+
+
+## bin_probability()
+
+
+The function bin_probability() provides the probability of a certain number of successes given the number of trials and the probability of success.
+
+For example, the probability of 3 successes in 7 trials given that the probability of success is .5.
+
+
+```{r, warning = FALSE, results = 'asis'}
+x = bin_probability(success = 3, trials = 7, prob = .5)
+x
+```
+
+bin_probability can also take multiple success arguments. For example, the probability of 0, 1, and 2 successes in 6 trials given that the probability of success is .75 would be:
+
+```{r}
+x = bin_probability(success = 0:2, trials = 6, prob = .75)
+x
+```
+
+## bin_distribution()
+
+The function bin distribution returns a data frame with the number of successes in the first column and the probability of the number of successes in the second column given the number of trials and the probability of success.
+
+For example, for 5 trials and a success probability of .69.
+
+```{r}
+x = bin_distribution(trials = 5, prob = .69)
+x
+```
+
+The bin_distribution function also creates an object of class "bindis." Because of this, calling plot() on bin_distribution will display a bargraph with the probability of that number of successes on the y-axis and the number of successes on the x-axis. 
+
+For example, to plot the bin_distribution of 5 trials and a success probability of .69 again.
+
+```{r}
+x = bin_distribution(trials = 5, prob = .69)
+plot(x)
+```
+
+## bin_cumulative()
+
+The function bin_cumulative() works similar to bin_probability(). Given a number of trials and the probability of success, bin_cumulative() returns a data frame with the number of successes in the 1st column, the probability of that number of successes in the 2nd column, and the the cumulative probability in the 3rd column.
+
+For example, for 5 trials and a success probability of .69 again.
+
+```{r}
+bin_cumulative(trials = 5, prob = .69)
+```
+
+The bin_distribution function also creates an object of class "bincum." Because of this, calling plot() on bin_cumulative will display a line graph of the cumulative binomial distribution with the cumulative probability of that number of successes on the y-axis and the number of successes on the x-axis. 
+
+For example, to plot the bin_cumulative of 5 trials and a success probability of .69 again.
+
+```{r}
+x = bin_cumulative(5, .69)
+plot(x)
+```
+
+## bin_variable()
+
+The function bin_variable() takes two arguments: the number of trials **trials** and the probability of success **prob**. The function creates a list of class "binvar" with a list with named elements **trials** and **prob**.
+
+For example, given 5 trials and a probability of .42, bin_variable will return a list with this output.
+
+```{r}
+x = bin_variable(trials = 5, prob = .42)
+x
+```
+
+After calling bin_variable, there are several other methods that can be called on the object returned of class "binvar."
+
+Calling summary on the returned object of class "binvar" will return a list of class "summary.binvar" with the number of trials, the probability of success, the mean or expected value, the varianace, the mode, the skewness, and the kurtosis.
+
+For example, calling summary on bin_variable with 5 trials and a .42 probability of success will return this.
+
+```{r}
+x = bin_variable(5, .42)
+summary(x)
+```
+
+## bin_mean()
+The expected value or mean of a binomial distribution can be calculated using the function bin_mean(). 
+
+For example, given 5 trials and success probability .5 the mean of the binomial distribution can be calculated as
+
+```{r}
+bin_mean(5, .5)
+```
+
+
+## bin_variance()
+The variance of a binomial distribution can be calculated using the function bin_variance().
+
+For example, given 5 trials and a success probability of .5 the variance of the binomial distribution can be calculated as
+
+```{r}
+bin_variance(5, .5)
+```
+
+
+## bin_mode()
+
+The mode or modes of a binomial distribution can be calculated using the function bin_variance().
+
+For example, given 5 trials and a success probability of .5 the mode of the binomial distribution can be calculated as
+```{r}
+bin_mode(5, .5)
+```
+
+## bin_skewness()
+
+The skewness of a binomial distribution can be calculated using the function bin_variance().
+
+For example, given 5 trials and a success probability of .69 the skewness of the binomial distribution can be calculated as
+
+```{r}
+bin_skewness(5, .69)
+```
+
+
+## bin_kurtosis()
+
+The kurtosis of a binomial distribution can be calculated using the function bin_variance().
+
+For example, given 5 trials and a success probability of .23 the kurtosis of the binomial distribution can be calculated as
+
+```{r}
+bin_kurtosis(5, .23)
+```
+
